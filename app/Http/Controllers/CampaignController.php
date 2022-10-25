@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\GroupCampaign;
 
-class GroupCampaignController extends Controller
+class CampaignController extends Controller
 {
     public function show(GroupCampaign $campaign)
     {

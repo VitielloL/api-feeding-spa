@@ -17,7 +17,7 @@ class Product extends Model
 
     public function groupCampaigns()
     {
-        return $this->hasMany(GroupCampaign::class);
+        return $this->hasMany(CampaignController::class);
     }
 
     public function discount()

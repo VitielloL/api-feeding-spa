@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CityGroup;
 
-class CityGroupController extends Controller
+class GroupController extends Controller
 {
     public function show(CityGroup $group)
     {

@@ -23,6 +23,6 @@ class CityGroup extends Model
 
     public function campaign()
     {
-        return $this->belongsTo(GroupCampaign::class);
+        return $this->belongsTo(CampaignController::class);
     }
 }

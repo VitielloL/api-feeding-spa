@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GroupCampaign extends Model
+class CampaignController extends Model
 {
     use HasFactory;
 

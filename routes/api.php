@@ -2,11 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CityGroupController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\CityController;
-use App\Http\Controllers\GroupCampaignController;
-use App\Http\Controllers\ProductCampaignController;
-use App\Http\Controllers\DiscountCampaignController;
+use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DiscountController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,36 +23,36 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('city')->group(function (){
-    Route::get('/',[CityController::class,'index'])->name('city');
+    Route::get('/{city}',[CityController::class,'show'])->name('city');
     Route::post('/store',[CityController::class,'store'])->name('city.store');
-    Route::post('/update',[CityController::class,'update'])->name('city.update');
-    Route::post('/delete',[CityController::class,'delete'])->name('city.delete');
+    Route::post('/update/{city}',[CityController::class,'update'])->name('city.update');
+    Route::post('/delete/{city}',[CityController::class,'delete'])->name('city.delete');
 });
 
 Route::prefix('group')->group(function ( ) {
-    Route::get('/',[CityGroupController::class,'index'])->name('group');
-    Route::post('/store',[CityGroupController::class,'store'])->name('group.store');
-    Route::post('/update',[CityGroupController::class,'update'])->name('group.update');
-    Route::post('/delete',[CityGroupController::class,'delete'])->name('group.delete');
+    Route::get('/{group}',[GroupController::class,'show'])->name('group');
+    Route::post('/store',[GroupController::class,'store'])->name('group.store');
+    Route::post('/update/{group}',[GroupController::class,'update'])->name('group.update');
+    Route::post('/delete/{group}',[GroupController::class,'delete'])->name('group.delete');
 });
 
 Route::prefix('campaign')->group(function ( ) {
-    Route::get('/',[GroupCampaignController::class,'index'])->name('campaign');
-    Route::post('/store',[GroupCampaignController::class,'store'])->name('campaign.store');
-    Route::post('/update',[GroupCampaignController::class,'update'])->name('campaign.update');
-    Route::post('/delete',[GroupCampaignController::class,'delete'])->name('campaign.delete');
+    Route::get('/{campaign}',[CampaignController::class,'show'])->name('campaign');
+    Route::post('/store',[CampaignController::class,'store'])->name('campaign.store');
+    Route::post('/update/{campaign}',[CampaignController::class,'update'])->name('campaign.update');
+    Route::post('/delete/{campaign}',[CampaignController::class,'delete'])->name('campaign.delete');
 });
 
 Route::prefix('product')->group(function ( ) {
-    Route::get('/',[ProductController::class,'index'])->name('product');
+    Route::get('/{product}',[ProductController::class,'show'])->name('product');
     Route::post('/store',[ProductController::class,'store'])->name('product.store');
-    Route::post('/update',[ProductController::class,'update'])->name('product.update');
-    Route::post('/delete',[ProductController::class,'delete'])->name('product.delete');
+    Route::post('/update/{product}',[ProductController::class,'update'])->name('product.update');
+    Route::post('/delete/{product}',[ProductController::class,'delete'])->name('product.delete');
 });
 
 Route::prefix('discount')->group(function ( ) {
-    Route::get('/',[DiscountController::class,'index'])->name('discount');
+    Route::get('/{discount}',[DiscountController::class,'show'])->name('discount');
     Route::post('/store',[DiscountController::class,'store'])->name('discount.store');
-    Route::post('/update',[DiscountController::class,'update'])->name('discount.update');
-    Route::post('/delete',[DiscountController::class,'delete'])->name('discount.delete');
+    Route::post('/update/{discount}',[DiscountController::class,'update'])->name('discount.update');
+    Route::post('/delete/{discount}',[DiscountController::class,'delete'])->name('discount.delete');
 });
