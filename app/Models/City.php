@@ -9,8 +9,6 @@ class City extends Model
 {
     use HasFactory;
 
-    // protected $table = 'cities';
-
     protected $fillable = [
         'name',
         'city_group_id'

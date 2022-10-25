@@ -9,8 +9,6 @@ class GroupCampaign extends Model
 {
     use HasFactory;
 
-    protected $table = 'group_campaigns';
-
     protected $fillable = [
         'name',
         'product_id'
