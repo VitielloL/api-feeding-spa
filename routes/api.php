@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityGroupController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\GroupCampaignController;
+use App\Http\Controllers\ProductCampaignController;
+use App\Http\Controllers\DiscountCampaignController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
