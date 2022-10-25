@@ -17,7 +17,7 @@ class feeding_city extends Seeder
     {
         DB::table('cities')->insert([
             'name' => 'Rio de Janeiro',
-            'group_id' => 1,
+            'city_group_id' => 1,
         ]);
     }
 }

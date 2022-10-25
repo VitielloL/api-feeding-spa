@@ -16,7 +16,7 @@ class feeding_group extends Seeder
      */
     public function run()
     {
-        DB::table('groups')->insert([
+        DB::table('city_groups')->insert([
             'name' => 'Grupo do Rio de Janeiro',
         ]);
     }
