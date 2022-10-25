@@ -14,9 +14,9 @@ class CityController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['city_group_id' => 'nullable|exists:city_groups,id',]);
+        $this->validate($request, ['city_group_id' => 'nullable|exists:city_groups,id','name' => 'required']);
         City::create($request->all());
-        return response()->status(201);
+        return response()->json(['message' => "created"],201);
     }
 
     public function update(Request $request, City $city)
