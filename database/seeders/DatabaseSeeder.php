@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(feeding_group::class);
         $this->call(feeding_city::class);
     }
 }

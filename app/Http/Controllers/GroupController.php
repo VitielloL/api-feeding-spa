@@ -2,33 +2,33 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\City;
+use App\Models\Group;
 
-class CityController extends Controller
+class GroupController extends Controller
 {
-    public function show(City $city)
+    public function show(Group $group)
     {
-        return $city;
+        return $group;
     }
 
     public function store(Request $request)
     {
-        City::create($request->all());
+        Group::create($request->all());
         return response()->status(201);
     }
 
-    public function update(Request $request, City $city)
+    public function update(Request $request, Group $group)
     {
-        $city->update([
+        $group->update([
             'name' => $request->name
         ]);
 
-        return $city;
+        return $group;
     }
 
-    public function destroy(City $city)
+    public function destroy(Group $group)
     {
-        $city->delete();
+        $group->delete();
 
         return response()->json([
             'message' => 'Deleted'

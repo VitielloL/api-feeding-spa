@@ -6,7 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class feeding_city extends Seeder
+
+class feeding_group extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +16,8 @@ class feeding_city extends Seeder
      */
     public function run()
     {
-        DB::table('cities')->insert([
-            'name' => 'Rio de Janeiro',
-            'group_id' => 1,
+        DB::table('groups')->insert([
+            'name' => 'Grupo do Rio de Janeiro',
         ]);
     }
 }
