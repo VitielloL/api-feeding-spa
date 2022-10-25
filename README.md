@@ -4,7 +4,8 @@ Desafio de criar uma api RESTful com Laravel para alimentar uma SPA com as segui
 * Cadastrar/Editar/Listar/Excluir cidades;
 * Cadastrar/Editar/Listar/Excluir grupo de cidades;
 * Cada cidade possui somente um grupo;
-* Cadastrar/Editar/Listar/Excluir campanhas para o grupo de cidades onde cada grupo possui somente uma campanha ativa;
+* Cadastrar/Editar/Listar/Excluir campanhas para o grupo de cidades 
+* Cada grupo possui somente uma campanha ativa;
 * Cadastrar/Editar/Listar/Excluir desconto para os produtos da campanha;
 * Cadastrar/Editar/Listar/Excluir produtos;
 
