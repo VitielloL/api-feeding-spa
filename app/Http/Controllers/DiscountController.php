@@ -20,7 +20,8 @@ class DiscountController extends Controller
     public function update(Request $request, Discount $discount)
     {
         $discount->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'discount' => $request->discount
         ]);
 
         return $discount;

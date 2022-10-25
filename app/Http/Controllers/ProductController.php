@@ -21,7 +21,8 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'value' => $request->value
         ]);
         if($request->has('discount_id')){
             $this->validate($request, ['discount_id' => 'exists:discount,id',]);

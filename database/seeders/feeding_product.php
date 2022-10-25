@@ -12,7 +12,7 @@ class feeding_product extends Seeder
     {
         DB::table('products')->insert([
             'name' => 'Produto da Campanha do Grupo do Rio de Janeiro',
-            'valor' => 10,
+            'value' => 10,
             'discount_id' => 1
         ]);
     }
