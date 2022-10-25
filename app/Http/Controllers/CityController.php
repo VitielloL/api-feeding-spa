@@ -14,6 +14,7 @@ class CityController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, ['city_group_id' => 'nullable|exists:city_groups,id',]);
         City::create($request->all());
         return response()->status(201);
     }
@@ -23,6 +24,12 @@ class CityController extends Controller
         $city->update([
             'name' => $request->name
         ]);
+        if($request->has('city_group_id')){
+            $this->validate($request, ['city_group_id' => 'exists:city_groups,id',]);
+            $city->update([
+                'city_group_id' => $request->city_group_id
+            ]);
+        }
 
         return $city;
     }

@@ -2,9 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GroupController;
+use App\Http\Controllers\CityGroupController;
 use App\Http\Controllers\CityController;
-use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\GroupCampaignController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,17 +28,17 @@ Route::prefix('city')->group(function (){
 });
 
 Route::prefix('group')->group(function ( ) {
-    Route::get('/',[GroupController::class,'index'])->name('group');
-    Route::post('/store',[GroupController::class,'store'])->name('group.store');
-    Route::post('/update',[GroupController::class,'update'])->name('group.update');
-    Route::post('/delete',[GroupController::class,'delete'])->name('group.delete');
+    Route::get('/',[CityGroupController::class,'index'])->name('group');
+    Route::post('/store',[CityGroupController::class,'store'])->name('group.store');
+    Route::post('/update',[CityGroupController::class,'update'])->name('group.update');
+    Route::post('/delete',[CityGroupController::class,'delete'])->name('group.delete');
 });
 
 Route::prefix('campaign')->group(function ( ) {
-    Route::get('/',[CampaignController::class,'index'])->name('campaign');
-    Route::post('/store',[CampaignController::class,'store'])->name('campaign.store');
-    Route::post('/update',[CampaignController::class,'update'])->name('campaign.update');
-    Route::post('/delete',[CampaignController::class,'delete'])->name('campaign.delete');
+    Route::get('/',[GroupCampaignController::class,'index'])->name('campaign');
+    Route::post('/store',[GroupCampaignController::class,'store'])->name('campaign.store');
+    Route::post('/update',[GroupCampaignController::class,'update'])->name('campaign.update');
+    Route::post('/delete',[GroupCampaignController::class,'delete'])->name('campaign.delete');
 });
 
 Route::prefix('product')->group(function ( ) {

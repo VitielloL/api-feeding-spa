@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model
+class CityGroup extends Model
 {
     use HasFactory;
 
@@ -23,6 +23,6 @@ class Group extends Model
 
     public function campaign()
     {
-        return $this->belongsTo(Campaign::class);
+        return $this->belongsTo(GroupCampaign::class);
     }
 }

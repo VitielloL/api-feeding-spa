@@ -7,13 +7,10 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
+        $this->call(feeding_discount::class);
+        $this->call(feeding_product::class);
         $this->call(feeding_group_campaigns::class);
         $this->call(feeding_city_groups::class);
         $this->call(feeding_city::class);

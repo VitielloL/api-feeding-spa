@@ -5,19 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class Discount extends Model
 {
     use HasFactory;
 
-    // protected $table = 'cities';
-
     protected $fillable = [
         'name',
-        'city_group_id'
+        'discount'
     ];
 
-    public function group()
+    public function products()
     {
-        return $this->belongsTo(CityGroup::class);
+        return $this->hasMany(Product::class);
     }
 }
