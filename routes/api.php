@@ -40,3 +40,17 @@ Route::prefix('campaign')->group(function ( ) {
     Route::post('/update',[CampaignController::class,'update'])->name('campaign.update');
     Route::post('/delete',[CampaignController::class,'delete'])->name('campaign.delete');
 });
+
+Route::prefix('product')->group(function ( ) {
+    Route::get('/',[ProductController::class,'index'])->name('product');
+    Route::post('/store',[ProductController::class,'store'])->name('product.store');
+    Route::post('/update',[ProductController::class,'update'])->name('product.update');
+    Route::post('/delete',[ProductController::class,'delete'])->name('product.delete');
+});
+
+Route::prefix('discount')->group(function ( ) {
+    Route::get('/',[DiscountController::class,'index'])->name('discount');
+    Route::post('/store',[DiscountController::class,'store'])->name('discount.store');
+    Route::post('/update',[DiscountController::class,'update'])->name('discount.update');
+    Route::post('/delete',[DiscountController::class,'delete'])->name('discount.delete');
+});
