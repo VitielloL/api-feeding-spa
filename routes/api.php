@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\CampaignController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,4 +32,11 @@ Route::prefix('group')->group(function ( ) {
     Route::post('/store',[GroupController::class,'store'])->name('group.store');
     Route::post('/update',[GroupController::class,'update'])->name('group.update');
     Route::post('/delete',[GroupController::class,'delete'])->name('group.delete');
+});
+
+Route::prefix('campaign')->group(function ( ) {
+    Route::get('/',[CampaignController::class,'index'])->name('campaign');
+    Route::post('/store',[CampaignController::class,'store'])->name('campaign.store');
+    Route::post('/update',[CampaignController::class,'update'])->name('campaign.update');
+    Route::post('/delete',[CampaignController::class,'delete'])->name('campaign.delete');
 });
