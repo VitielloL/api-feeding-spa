@@ -8,16 +8,15 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('group_campaigns', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
-            $table->foreignId('city_group_id')->constrained()->nullable()->onDelete('cascade');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('cities');
+        Schema::dropIfExists('group_campaigns');
     }
 };

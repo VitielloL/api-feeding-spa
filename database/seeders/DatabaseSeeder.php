@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(feeding_group::class);
+        $this->call(feeding_group_campaigns::class);
+        $this->call(feeding_city_groups::class);
         $this->call(feeding_city::class);
     }
 }
