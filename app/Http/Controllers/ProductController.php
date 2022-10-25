@@ -13,9 +13,9 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['discount_id' => 'nullable|exists:discount,id',]);
+        $this->validate($request, ['discount_id' => 'nullable|exists:discount,id', 'name' => 'required', 'value' => 'required']);
         Product::create($request->all());
-        return response()->status(201);
+        return response()->json(['message' => "created"],201);
     }
 
     public function update(Request $request, Product $product)

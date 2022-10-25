@@ -13,8 +13,9 @@ class DiscountController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, ['name' => 'required', 'discount'=> 'required']);
         Discount::create($request->all());
-        return response()->status(201);
+        return response()->json(['message' => "created"],201);
     }
 
     public function update(Request $request, Discount $discount)

@@ -14,9 +14,9 @@ class CampaignController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['product_id' => 'nullable|exists:product,id',]);
+        $this->validate($request, ['product_id' => 'nullable|exists:product,id','name' => 'required']);
         GroupCampaign::create($request->all());
-        return response()->status(201);
+        return response()->json(['message' => "created"],201);
     }
 
     public function update(Request $request, GroupCampaign $campaign)

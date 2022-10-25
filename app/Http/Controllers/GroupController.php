@@ -14,9 +14,9 @@ class GroupController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['group_campaign_id' => 'nullable|exists:group_campaigns,id',]);
+        $this->validate($request, ['group_campaign_id' => 'nullable|exists:group_campaigns,id', 'name' => 'required']);
         CityGroup::create($request->all());
-        return response()->status(201);
+        return response()->json(['message' => "created"],201);
     }
 
     public function update(Request $request, CityGroup $group)
