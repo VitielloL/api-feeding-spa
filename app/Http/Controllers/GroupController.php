@@ -26,7 +26,7 @@ class GroupController extends Controller
         ]);
         if($request->has('group_campaign_id')){
             $this->validate($request, ['group_campaign_id' => 'exists:group_campaigns,id',]);
-            $city->update([
+            $group->update([
                 'group_campaign_id' => $request->group_campaign_id
             ]);
         }

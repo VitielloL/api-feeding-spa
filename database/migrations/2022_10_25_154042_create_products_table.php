@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('value')->nullable();
-            $table->foreignId('discount_id')->constrained()->nullable()->onDelete('cascade');
+            $table->foreignId('discount_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

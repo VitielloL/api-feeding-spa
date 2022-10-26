@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('city_groups', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('group_campaign_id')->constrained()->nullable()->onDelete('cascade');
+            $table->foreignId('group_campaign_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

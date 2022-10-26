@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -26,7 +27,7 @@ class ProductController extends Controller
         ]);
         if($request->has('discount_id')){
             $this->validate($request, ['discount_id' => 'exists:discount,id',]);
-            $city->update([
+            $product->update([
                 'discount_id' => $request->discount_id
             ]);
         }
